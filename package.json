@@ -1,0 +1,39 @@
+{
+    "name": "@moonomat/moon",
+    "version": "0.1.0",
+    "description": "The command-line tool for Moon, a YAML language for parametric 3D models.",
+    "license": "MIT",
+    "homepage": "https://moonomat.com",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/moonomat/moon-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/moonomat/moon-cli/issues"
+    },
+    "keywords": [
+        "moon",
+        "moonomat",
+        "3d",
+        "gltf",
+        "glb",
+        "parametric",
+        "cli"
+    ],
+    "type": "module",
+    "bin": {
+        "moon": "moon.js"
+    },
+    "files": [
+        "moon.js",
+        "keys"
+    ],
+    "engines": {
+        "node": ">=22.12"
+    },
+    "moonLauncherApi": 1,
+    "dependencies": {
+        "puppeteer-core": "^25.16.0",
+        "webgpu": "^0.6.2"
+    }
+}
