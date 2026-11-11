@@ -1,7 +1,13 @@
 # @moonomat/moon
 
-The command-line tool for Moon, a YAML language for parametric 3D models. `moon`
-runs a Moon file on your computer and writes a standard glTF model.
+`moon` lets your AI coding agent build accurate 3D models from photos, drawings or a
+description. The agent writes the model in Moon, a YAML language for parametric 3D
+models, and `moon` runs it on your computer and writes a standard glTF model.
+
+[![Reference photos of a plywood lounge chair, the 3D model built from them, and its wireframe](docs/plywood-lounge-chair.webp)](https://moonomat.com/view/?url=https://github.com/moonomat/moon-examples/blob/main/examples/plywood-lounge-chair.moons)
+
+A folder of photos and one prompt, built by Claude Fable 5.2 in 25 minutes.
+[Open the model in your browser](https://moonomat.com/view/?url=https://github.com/moonomat/moon-examples/blob/main/examples/plywood-lounge-chair.moons).
 
 ## Install
 
@@ -17,7 +23,24 @@ To run without installing, use `npx @moonomat/moon` wherever this page says
 `moon`. It starts more slowly. Use it this way too if you have moonrepo, an
 unrelated build tool that installs its own `moon` command.
 
-## Quick start
+## Build a model with your AI
+
+Put photos, drawings or measurements of an object into a folder. Start your coding
+agent next to it and tell it what to build:
+
+```text
+Using the moon CLI, create a realistic and detailed 3d model of the chair in ./references/
+```
+
+The agent learns Moon from `moon get-started`, writes the model, runs it, compares
+renders with your photos and fixes what differs. The chair above took 25 minutes. You get a
+`.moon` file with parameters you can change, and a `.glb` that opens in any 3D tool.
+
+Run `moon login` yourself first, the agent cannot sign in for you. For regular use, tell
+the agent about `moon` in its instructions file, such as `AGENTS.md`. In Codex, the sandbox
+has to allow network access and writes to `~/.cache/moonomat` and `~/.config/moonomat`.
+
+## Write Moon by hand
 
 Save this as `can.moon`:
 
@@ -64,15 +87,6 @@ This writes the model to `can.moon.glb` and a 3×3 grid of views to
 | `moon login` | Signs in to your Moonomat account. |
 
 `moon <command> --help` lists the options of each command.
-
-## Coding agents
-
-Run `moon login` yourself first, then tell your agent to use `moon`, or say so in
-its instructions file, such as `AGENTS.md`. The agent learns the language and the workflow
-from `moon get-started`, and reads the reference as it needs it with `moon spec`.
-
-In Codex, the sandbox has to allow network access and writes to
-`~/.cache/moonomat` and `~/.config/moonomat`.
 
 ## How it works
 
